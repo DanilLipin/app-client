@@ -1,0 +1,45 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.modal {
+    position: relative;
+    background: white;
+    padding: 20px;
+    max-width: 1000px;
+    width: 100%;
+    border-radius: 8px;
+    outline: none;
+  }
+  
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+.modal-close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  @media (min-width: 768px) {
+    .modal .grid-cols-1 > div {
+      width: 100%;
+    }
+    .modal .grid-cols-2 > div {
+      width: 48%;
+    }
+    .modal .grid-cols-3 > div {
+      width: 30%;
+    }
+  }
