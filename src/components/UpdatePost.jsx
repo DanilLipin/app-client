@@ -305,9 +305,9 @@ const UpdatePost = () => {
               name="description"
               required
               {...register('description')}
-              maxLength={500}  // Ограничиваем длину до 300 символов
-              rows={3}  // Устанавливаем начальный размер
-              style={{ resize: 'none', overflow: 'hidden' }}  // Запрещаем изменение размера и добавляем скрытие переполнения
+              maxLength={500}  
+              rows={3} 
+              style={{ resize: 'none', overflow: 'hidden' }} 
               onInput={(e) => {
                 e.target.style.height = 'auto';
                 e.target.style.height = `${e.target.scrollHeight}px`;

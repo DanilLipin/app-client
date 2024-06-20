@@ -23,7 +23,7 @@ const ManageCategories = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/categories');
+      const response = await axios.get('/api/categories');
       setCategories(response.data.data);
     } catch (error) {
       console.error('Ошибка при получении категорий:', error);
@@ -35,10 +35,10 @@ const ManageCategories = () => {
 
     try {
       if (editingId) {
-        await axios.put(`http://localhost:8080/api/admin/update-category/${editingId}`, { name, image: iconUrl });
+        await axios.put(`/api/admin/update-category/${editingId}`, { name, image: iconUrl });
         setSuccess('Категория успешно обновлена');
       } else {
-        await axios.post('http://localhost:8080/api/admin/create-category', { name, image: iconUrl });
+        await axios.post('/api/admin/create-category', { name, image: iconUrl });
         setSuccess('Категория успешно создана');
       }
       setName('');
@@ -60,7 +60,7 @@ const ManageCategories = () => {
 
   const handleDeleteCategory = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/api/admin/delete-category/${id}`);
+      await axios.delete(`/api/admin/delete-category/${id}`);
       setSuccess('Категория успешно удалена');
       fetchCategories();
     } catch (error) {

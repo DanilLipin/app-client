@@ -22,7 +22,6 @@ const UserDetail = () => {
         const userResponse = await axios.get(`/api/user/${id}`);
         setUserDetail(userResponse.data.data);
 
-        // Проверка авторизации пользователя
         if (currentUser && currentUser.user.id === userResponse.data.data.id) {
           setIsOwner(true);
         } else {
@@ -64,7 +63,7 @@ const UserDetail = () => {
         },
         withCredentials: true,
       });
-      logout(); // вызов функции logout из контекста
+      logout(); 
       navigate('/');
     } catch (error) {
       console.error('Error during logout:', error);

@@ -40,7 +40,7 @@ const CreateAdmin = () => {
     const storedUser = JSON.parse(localStorage.getItem('user'));
 
     try {
-      const response = await axios.post('http://localhost:8080/api/admin/create-admin', {
+      const response = await axios.post('/api/admin/create-admin', {
         first_name: firstName,
         last_name: lastName,
         email,

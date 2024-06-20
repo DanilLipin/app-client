@@ -59,7 +59,7 @@ const AdminPanel = () => {
   };
 
   const parseImages = (imagesString) => {
-    let imagesArray = ['/api/uploads/icons/general/no_photo.svg']; // Default image
+    let imagesArray = ['/api/uploads/icons/general/no_photo.svg']; 
     try {
       if (imagesString) {
         const cleanedString = imagesString.slice(1, -1).replace(/\\"/g, '"');

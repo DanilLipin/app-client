@@ -61,7 +61,6 @@ const UserChats = () => {
 
                     try {
                       if (post.images) {
-                        // Clean and parse images string
                         const cleanedString = post.images.slice(1, -1).replace(/\\"/g, '"');
                         const withoutBrackets = cleanedString.replace(/^\[|\]$/g, '');
                         const images = JSON.parse(`[${withoutBrackets}]`);

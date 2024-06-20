@@ -10,7 +10,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-const maxFileSize = 5 * 1024 * 1024; // 5 MB
+const maxFileSize = 5 * 1024 * 1024; 
 
 const CreatePost = () => {
   const { register, handleSubmit, watch, setValue } = useForm();
@@ -44,10 +44,9 @@ const CreatePost = () => {
   }, [navigate]);
 
   const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
-    const filePreviews = [...imagePreviews]; // сохраняем предыдущие превью
+    const filePreviews = [...imagePreviews]; 
     const newFiles = new DataTransfer();
   
-    // Добавляем старые файлы
     if (watchedImages) {
       Array.from(watchedImages).forEach(file => newFiles.items.add(file));
     }
@@ -194,7 +193,7 @@ const CreatePost = () => {
               type="text"
               required
               {...register('title')}
-              maxLength={50}  // Ограничиваем длину до 50 символов
+              maxLength={50} 
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-dark-blue focus:border-dark-blue sm:text-sm"
             />
             <p className="mt-1 text-xs text-gray-500">Максимальная длина названия: 50 символов</p>
@@ -246,9 +245,9 @@ const CreatePost = () => {
               name="description"
               required
               {...register('description')}
-              maxLength={500}  // Ограничиваем длину до 300 символов
-              rows={3}  // Устанавливаем начальный размер
-              style={{ resize: 'none', overflow: 'hidden' }}  // Запрещаем изменение размера и добавляем скрытие переполнения
+              maxLength={500}  
+              rows={3} 
+              style={{ resize: 'none', overflow: 'hidden' }} 
               onInput={(e) => {
                 e.target.style.height = 'auto';
                 e.target.style.height = `${e.target.scrollHeight}px`;
@@ -287,7 +286,7 @@ const CreatePost = () => {
               required
               {...register('estimatedPrice')}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-dark-blue focus:border-dark-blue sm:text-sm"
-              style={{ appearance: 'textfield' }} // Добавляем стили для скрытия стрелок
+              style={{ appearance: 'textfield' }} 
             />
             <p className="mt-1 text-xs text-gray-500">Укажите в этом поле целое число, в рублях</p>
           </div>

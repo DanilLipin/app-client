@@ -4,7 +4,7 @@ import moment from 'moment';
 import 'moment/locale/ru';
 
 const PostItem = ({ post }) => {
-  let firstImage = '/api/uploads/icons/general/no_photo.svg'; // Default image
+  let firstImage = '/api/uploads/icons/general/no_photo.svg';
 
   try {
     if (post.images) {

@@ -21,7 +21,7 @@ const PostDetail = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [similarPosts, setSimilarPosts] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [isInChat, setIsInChat] = useState(false); // Добавляем состояние для проверки принадлежности к чату
+  const [isInChat, setIsInChat] = useState(false);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -107,7 +107,6 @@ const PostDetail = () => {
     }
   };
 
-  // Новая функция для мягкого удаления объявления
   const handleSoftDelete = async () => {
     try {
       const storedUser = JSON.parse(localStorage.getItem('user'));
@@ -199,7 +198,7 @@ const PostDetail = () => {
     return (
       <div className="flex justify-center items-center h-screen">
         <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
-          <span className="visually-hidden">Загрузка...</span>
+        
         </div>
       </div>
     );
